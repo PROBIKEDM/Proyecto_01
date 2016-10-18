@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+	<title>FindYourBike</title>
+
+<script>
+		
+			function validar(){
+				var error=true;
+				
+				if(document.formulario.modelo.value==""){
+					document.formulario.modelo.style.borderColor='red';
+					error=false;
+				}
+				if(document.formulario.numeroserie.value==""){
+					document.formulario.numeroserie.style.borderColor='red';
+					error=false;
+				}
+				
+				if(document.formulario.fecharobo.value==""){
+					document.formulario.fecharobo.style.borderColor='red';
+					error=false;
+				}
+				
+
+				return error;
+			}
+	</script>
+
+
+</head>
+<body>
+
+
+		<form name=formulario action="conexio_bd.php" method="GET" onsubmit="return validar();">
+			
+			
+			<br/>Lugar del robo:<br/>
+			<select name="provincia" size="1">
+            <option selected disabled>Selecciona</option>
+            <option value='A Coruña' >A Coruña</option>
+            <option value='álava'>Álava</option>
+            <option value='Albacete' >Albacete</option>
+            <option value='Alicante'>Alicante</option>
+            <option value='Almería' >Almería</option>
+            <option value='Asturias' >Asturias</option>
+            <option value='ávila' >Ávila</option>
+            <option value='Badajoz' >Badajoz</option>
+            <option value='Barcelona'>Barcelona</option>
+            <option value='Burgos' >Burgos</option>
+            <option value='Cáceres' >Cáceres</option>
+            <option value='Cádiz' >Cádiz</option>
+            <option value='Cantabria' >Cantabria</option>
+            <option value='Castellón' >Castellón</option>
+            <option value='Ceuta' >Ceuta</option>
+            <option value='Ciudad Real' >Ciudad Real</option>
+            <option value='Córdoba' >Córdoba</option>
+            <option value='Cuenca' >Cuenca</option>
+            <option value='Gerona' >Gerona</option>
+            <option value='Girona' >Girona</option>
+            <option value='Las Palmas' >Las Palmas</option>
+            <option value='Granada' >Granada</option>
+            <option value='Guadalajara' >Guadalajara</option>
+            <option value='Guipúzcoa' >Guipúzcoa</option>
+            <option value='Huelva' >Huelva</option>
+            <option value='Huesca' >Huesca</option>
+            <option value='Jaén' >Jaén</option>
+            <option value='La Rioja' >La Rioja</option>
+            <option value='León' >León</option>
+            <option value='Lleida' >Lleida</option>
+            <option value='Lugo' >Lugo</option>
+            <option value='Madrid' >Madrid</option>
+            <option value='Malaga' >Málaga</option>
+            <option value='Mallorca' >Mallorca</option>
+            <option value='Melilla' >Melilla</option>
+            <option value='Murcia' >Murcia</option>
+            <option value='Navarra' >Navarra</option>
+            <option value='Orense' >Orense</option>
+            <option value='Palencia' >Palencia</option>
+            <option value='Pontevedra'>Pontevedra</option>
+            <option value='Salamanca'>Salamanca</option>
+            <option value='Segovia' >Segovia</option>
+            <option value='Sevilla' >Sevilla</option>
+            <option value='Soria' >Soria</option>
+            <option value='Tarragona' >Tarragona</option>
+            <option value='Tenerife' >Tenerife</option>
+            <option value='Teruel' >Teruel</option>
+            <option value='Toledo' >Toledo</option>
+            <option value='Valencia' >Valencia</option>
+            <option value='Valladolid' >Valladolid</option>
+            <option value='Vizcaya' >Vizcaya</option>
+            <option value='Zamora' >Zamora</option>
+            <option value='Zaragoza'>Zaragoza</option>
+          </select>
+
+			<br/>Marca:<br/>
+			<select name="estado" id="rango">
+					<option selected disabled>Seleciona</option>
+					<option value="abus">Abus</option>
+					<option value="aim_bike_parts">Aim Bike Parts</option>
+					<option value="airshot">Airshot</option>
+					<option value="alpina">Alpina</option>
+					<option value="amat">Amat</option>
+					<option value="bbb">BBB</option>
+					<option value="bell">Bell</option>
+					<option value="best">Best</option>
+					<option value="bh">BH</option>
+					<option value="bookman">Bookman</option>
+					<option value="born">Born</option>
+					<option value="brompton">Brompton</option>
+					<option value="buff">Buff</option>
+					<option value="carrera">Carrera</option>
+					<option value="castelli">Castelli</option>
+					<option value="cateye">Cateye</option>
+					<option value="compex">compex</option>
+					<option value="conor">Conor</option>
+					<option value="continental">Continental</option>
+					<option value="croozer">Croozer</option>
+					<option value="cube">Cube</option>
+					<option value="cycloc">Cycloc</option>
+					<option value="dahon">Dahon</option>
+					<option value="deda">Deda</option>
+					<option value="edco">Educo</option>
+					<option value="elite">Elite</option>
+					<option value="endura">Endura</option>
+					<option value="evoc">Evoc</option>
+					<option value="fahrer">Fahrer</option>
+					<option value="feedback">Feedback</option>
+					<option value="ferrino">Ferrino</option>
+					<option value="finn">Finn</option>
+					<option value="fristbike">Fristbike</option>
+					<option value="fizik">Fizik</option>
+					<option value="fox">Fox</option>
+					<option value="fuelbelt">Fuelbelt</option>
+					<option value="galfer">Galfer</option>
+					<option value="garmin">Garmin</option>
+					<option value="geax">Geax</option>
+					<option value="gmg">Gmg</option>
+					<option value="gobik">Gobik</option>
+					<option value="gopro">Gopro</option>
+					<option value="gore">Gore</option>
+					<option value="gt">Gt</option>
+					<option value="gu">Gu</option>
+					<option value="haibike">Haibike</option>
+					<option value="handmade">Handmade</option>
+					<option value="hebie">Hebie</option>
+					<option value="hope">Hope</option>
+					<option value="ism">Ism</option>
+					<option value="isostar">Isostar</option>
+					<option value="jerseybin">Jerseybin</option>
+					<option value="kcnc">Kcnc</option>
+					<option value="kenda">Kenda</option>
+					<option value="klein">Klein</option>
+					<option value="knog">Knog</option>
+					<option value="konnix">Konnix</option>
+					<option value="lapierre">Lapierre</option>
+					<option value="lecoqsportif">Le coq sportif</option>
+					<option value="leonardi">Leonardi</option>
+					<option value="likeabike">Like a bike</option>
+					<option value="limar">Limar</option>
+					<option value="look">Look</option>
+					<option value="mach1">Mach1</option>
+					<option value="magura">Magura</option>
+					<option value="massi">Massi</option>
+					<option value="masterlock">Masterlock</option>
+					<option value="maxxis">Maxxis</option>
+					<option value="met">Met</option>
+					<option value="michelin">Michelin</option>
+					<option value="milan">Milan</option>
+					<option value="mio">Mio</option>
+					<option value="monty">Monty</option>
+					<option value="niner">Niner</option>
+					<option value="nutcase">Nutcase</option>
+					<option value="nutribike">Nutribike</option>
+					<option value="oakley">Oakley</option>
+					<option value="ok">OK</option>
+					<option value="onoff">Onoff</option>
+					<option value="onza">Onza</option>
+					<option value="orbea">Orbea</option>
+					<option value="panasonic">Panasonic</option>
+					<option value="peruzzo">Peruzzo</option>
+					<option value="polar">Polar</option>
+					<option value="powergym">PowerGym</option>
+					<option value="progress">Progress</option>
+					<option value="qm">QM</option>
+					<option value="raceface">Race Face</option>
+					<option value="rotor">Rotor</option>
+					<option value="rubena">Rubena</option>
+					<option value="rudd">Rudd</option>
+					<option value="santini">Santini</option>
+					<option value="scott">Scott</option>
+					<option value="shimano">Shimano</option>
+					<option value="sigma">Sigma</option>
+					<option value="sks">Sks</option>
+					<option value="slime">Slime</option>
+					<option value="smart">Smart</option>
+					<option value="sony">Sony</option>
+					<option value="sportful">Sportful</option>
+					<option value="swisstop">Swisstop</option>
+					<option value="tactic">Tactic</option>
+					<option value="tannus">Tannus</option>
+					<option value="thule">Thule</option>
+					<option value="tigra">Tigra</option>
+					<option value="time">Time</option>
+					<option value="tiptop">Tiptop</option>
+					<option value="topeak">Topeak</option>
+					<option value="trek">Trek</option>
+					<option value="tubus">Tubus</option>
+					<option value="use">Use</option>
+					<option value="valerias">Valerias</option>
+					<option value="veloflex">Veloflex</option>
+					<option value="velox">Velox</option>
+					<option value="vittoria">Vittoria</option>
+					<option value="vp">Vp</option>
+					<option value="weldtite">Weldtite</option>
+					<option value="winora">Winora</option>
+					<option value="xsocks">X-Socks</option>
+					<option value="xls">XLS</option>
+					<option value="yeti">Yeti</option>
+					<option value="zefal">Zefal</option>
+					<option value="zeroflats">Zeroflats</option>
+					<option value="otramarca">Otra marca</option>
+			</select>
+			<br/>
+			Modelo:<br/>
+			<input type="text" name="modelo" id="modelo" size="20" maxlength="85" onfocus="document.formulario.modelo.style.borderColor='';"/><br/>
+			Número de serie de la bici:<br/>
+			<input type="text" name="numeroserie" id="numeroserie" size="30" maxlength="85" onfocus="document.formulario.numeroserie.style.borderColor='';"/><br/>
+			Fecha del robo:<br/>
+			<input type="date" name="fecharobo" onfocus="document.formulario.fecharobo.style.borderColor='';"/>
+			<br/><br/>
+			Color bici:<br/>
+			<input type="radio" name="color" value="blanca"/>Blanca<br/>
+			<input type="radio" name="color" value="negra">Negra<br/>
+			<input type="radio" name="color" value="gris"/>Gris<br/>
+			<input type="radio" name="color" value="azul"/>Azúl<br/>
+			<input type="radio" name="color" value="naranja"/>Naranja<br/>
+			<input type="radio" name="color" value="amarilla"/>Amarilla<br/>
+			<input type="radio" name="color" value="roja"/>Roja<br/>
+			<input type="radio" name="color" value="verde"/>Verde<br/>
+			<input type="radio" name="color" value="marron"/>Marrón<br/>
+			<input type="radio" name="color" value="purpura"/>Púrpura<br/>
+			<input type="radio" name="color" value="otro"/>Otro<br/>
+			<br/>
+			<INPUT TYPE=IMAGE SRC="send.png"width="120" height="50">		
+		</form>
+
+
+</body>
+</html>
