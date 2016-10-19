@@ -904,25 +904,20 @@ include 'conexio_bd.php';
         
 
 <?php
+         
+    try{
          if(mysqli_num_rows($productos)>0){
 ?>
-
-            
-
                 
 <?php
-            //echo "Número de productos: " . mysqli_num_rows($productos) . "<br/><br/>";
-
+            
             while($producto = mysqli_fetch_array($productos)){
 
                 echo "<li class='item'>"; 
 
-                echo "<img src='media/catalog/product/cache/1/small_image/175x120/cbcbef48e5e3bcce7c7ed908f20bc5b4/b/i/bicicleta-conor-meteor-16-2015_104_2.jpg' alt='Bicicleta Infantil Conor Meteor 16&quot; 2015' />";
+                echo "<img src='IMG/".$producto["anu_foto"].".jpg'/>";
  ?>                
                  
-
-
-
                 <div class="dades_product">
                     <h2 class="product-name">       
  <?php    
@@ -930,10 +925,7 @@ include 'conexio_bd.php';
                 echo"<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015'>".$producto['anu_titol']."</a>";
 
   ?>           
-                       
-
-   </h2>
-                                                        
+   </h2>                                    
                     <div class="actions clearfix">
                         <div class="button_cart">
                                 <button type="button" title="contacto" class="button btn-cart" onclick="setLocation('bicicleta-infantil-conor-meteor-16-20154df8.html?options=cart')"><span><span>CONTACTO</span></span></button>
@@ -943,31 +935,19 @@ include 'conexio_bd.php';
                 </div>
             </li>
 
-
-
  <?php
-               // if (file_exists ($foto)){
-                   // echo "<img src='" . $foto . "' width='300'/><br/><br/>";
-               // } else {
-                    //echo "<img src='img/0.jpg' width='300'/><br/><br/>";
-               // }
+             
             }
         } else {
-            //echo "No hay datos que mostrar!";
-        }
-           // echo "<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015' class='product-image'>";
-            
+            echo "No hay datos que mostrar!";
+        };
+    } catch (Exception $e){
+        echo "No se encontraron datos";
+    };
+           
+           
         ?>
 
-               
-<?php
-                       
-?>
-                 
-
-
-    <?php
-    ?>
 
             </ul>    
     </div>
@@ -1013,7 +993,7 @@ include 'conexio_bd.php';
                 <div class="col-left sidebar"><h2 class="title_filters" style="text-transform:uppercase">Búsqueda Avanzada</h2>
                     <div class="block block-layered-nav gomage-navigation-slider-type-cone gomage-navigation-icons-1F5070">
                         <div class="block-content">
-                            <form name=formulario action="conexio_bd.php" method="GET" onsubmit="return validar();">
+                            <form name=formulario method="GET" onsubmit="return validar();">
                                 <div class="filtro">
                                     <div class="filtro"><span class="label">Lurgar del robo: </span></div>
                                     <div><select name="provincia" size="1">
@@ -1075,7 +1055,7 @@ include 'conexio_bd.php';
                                     </div>
                                     <div><span class="label">Marca: </span></div>
                                     <div>
-                                        <select name="estado" id="rango">
+                                        <select name="marca" id="rango">
                                             <option selected disabled>Seleciona</option>
                                             <option value="abus">Abus</option>
                                             <option value="aim_bike_parts">Aim Bike Parts</option>
@@ -1238,7 +1218,8 @@ include 'conexio_bd.php';
                                         <input type="radio" name="color" value="otro"/>Otro<br/>
                                     </div>
                                     <div>
-                                        <INPUT TYPE=IMAGE SRC="send.png"width="120" height="50">
+                                        <input name="oculto" type="hidden" value="formulario" />
+                                        <input type="submit" value="Pasando variable oculta" />
                                     </div>
 
 

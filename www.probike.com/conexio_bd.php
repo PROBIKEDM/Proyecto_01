@@ -13,32 +13,83 @@
 		     echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
 		     exit;
 		 }
-
-		 $sql = "SELECT * FROM anunci";
-
 		 
-		 $productos = mysqli_query($conexion, $sql);
 
+		 if(isset($_REQUEST["oculto"])){
 
-		//  if(mysqli_num_rows($productos)>0){
-		// 	echo "Número de productos: " . mysqli_num_rows($productos) . "<br/><br/>";
-		// 	while($producto = mysqli_fetch_array($productos)){
-		// 		echo "Id: " . $producto['anu_titol'] . "<br/>";
-		// 		echo "Nombre: " . $producto['pro_nombre'] . "<br/>";
-		// 		echo "Precio: " . $producto['pro_precio'] . "<br/>";
-		// 		$foto='img/'.$producto['pro_foto'];
+		 		$consulta="";
+		 	 	$cont=0;
 
-		// 		if (file_exists ($foto)){
-		// 			echo "<img src='" . $foto . "' width='300'/><br/><br/>";
-		// 		} else {
-		// 			echo "<img src='img/0.jpg' width='300'/><br/><br/>";
-		// 		}
-		// 	}
-		// } else {
-		// 	echo "No hay datos que mostrar!";
-		// }
+		 	if(isset($_REQUEST['provincia'])){
+		 		$robo=$_REQUEST['provincia'];
+		 		if($cont==0){
+		 			$consulta.="WHERE anu_ubicacio_robatori = \"".$robo."\"";
+		 			$cont++;}
+		 	}
 
-		// mysqli_close($conexion);
+		 	if(isset($_REQUEST['marca'])){
+		 		$marca=$_REQUEST['marca'];
+		 			if($cont!=0){
+		 				$consulta.=" and anu_marca = \"".$marca."\"";
+		 			}else{
+		 				$consulta.="WHERE anu_marca = \"".$marca."\"";
+		 			}
+		 		$cont++;
+		 	}
+
+		 	if(isset($_REQUEST['modelo'])){
+		 		$modelo=$_REQUEST['modelo'];
+		 		if($cont!=0){
+		 			 $consulta.=" and anu_model = \"".$modelo."\"";
+		 		}else{
+		 			$consulta.="WHERE anu_model = \"".$modelo."\"";
+		 		}
+		 		$cont++;
+		 	}
+
+		 	if(isset($_REQUEST['numeroserie'])){
+		 		$serie=$_REQUEST['numeroserie'];
+		 		if($cont!=0){
+		 			$consulta.=" and anu_numero_serie = \"".$serie."\"";
+		 		}else{
+		 			$consulta.="WHERE anu_numero_serie = \"".$serie."\"";
+		 		}
+		 		$cont++;
+		 	};
+
+		 	
+		 	if(isset($_REQUEST['fecharobo'])){
+		 		$datarobo=$_REQUEST['fecharobo'];
+		 		if($cont!=0){
+		 			$consulta.=" and anu_data_robatori = \"".$datarobo."\"";
+		 		}else{
+		 			$consulta.="WHERE anu_data_robatori = \"".$datarobo."\"";
+		 		}
+		 		$cont++;
+		 	}
+		 	
+
+		 	if(isset($_REQUEST['color'])){
+		 		$color=$_REQUEST['color'];
+		 		if($cont!=0){
+		 			$consulta.=" and anu_color =\"".$color."\"";
+		 		}else{
+		 			$consulta.="WHERE anu_color \"".$color."\"";
+		 		}
+		 		$cont++;
+		 	}
+
+		 	
+
+		 	 echo $sql = "SELECT * FROM anunci $consulta";
+		 	$productos = mysqli_query($conexion, $sql);
+		 	
+		 }else{
+
+		 		$sql = "SELECT * FROM anunci";
+		 		$productos = mysqli_query($conexion, $sql);
+		}
+
 
 
 ?>
