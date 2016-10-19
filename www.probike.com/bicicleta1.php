@@ -918,13 +918,18 @@ include 'conexio_bd.php';
                 echo "<li class='item'>"; 
 
                 echo "<img src='media/catalog/product/cache/1/small_image/175x120/cbcbef48e5e3bcce7c7ed908f20bc5b4/b/i/bicicleta-conor-meteor-16-2015_104_2.jpg' alt='Bicicleta Infantil Conor Meteor 16&quot; 2015' />";
-                 echo"<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015'>".$producto['anu_titol']."</a>";
- ?>
+ ?>                
+                 
+
 
 
                 <div class="dades_product">
                     <h2 class="product-name">       
-               
+ <?php    
+
+                echo"<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015'>".$producto['anu_titol']."</a>";
+
+  ?>           
                        
 
    </h2>
