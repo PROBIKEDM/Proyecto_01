@@ -901,20 +901,33 @@ include 'conexio_bd.php';
 
     <div class="category-products">
         <ul class="products-grid">  
-        <li class="item"> 
+        
 
 <?php
-        $sql = "SELECT * FROM anunci";
-           // echo "<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015' class='product-image'>";
-            echo "<img src='media/catalog/product/cache/1/small_image/175x120/cbcbef48e5e3bcce7c7ed908f20bc5b4/b/i/bicicleta-conor-meteor-16-2015_104_2.jpg' alt='Bicicleta Infantil Conor Meteor 16&quot; 2015' />";
-        ?>
+         if(mysqli_num_rows($productos)>0){
+?>
+
+            
+
+                
+<?php
+            //echo "Número de productos: " . mysqli_num_rows($productos) . "<br/><br/>";
+
+            while($producto = mysqli_fetch_array($productos)){
+
+                echo "<li class='item'>"; 
+
+                echo "<img src='media/catalog/product/cache/1/small_image/175x120/cbcbef48e5e3bcce7c7ed908f20bc5b4/b/i/bicicleta-conor-meteor-16-2015_104_2.jpg' alt='Bicicleta Infantil Conor Meteor 16&quot; 2015' />";
+                 echo"<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015'>".$producto['anu_titol']."</a>";
+ ?>
+
 
                 <div class="dades_product">
-                    <h2 class="product-name">
-<?php
-                        echo"<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015'>NOMBRE DE LA BICICLETA</a>";
-?>
-                    </h2>
+                    <h2 class="product-name">       
+               
+                       
+
+   </h2>
                                                         
                     <div class="actions clearfix">
                         <div class="button_cart">
@@ -924,6 +937,28 @@ include 'conexio_bd.php';
                     </div>
                 </div>
             </li>
+
+
+
+ <?php
+               // if (file_exists ($foto)){
+                   // echo "<img src='" . $foto . "' width='300'/><br/><br/>";
+               // } else {
+                    //echo "<img src='img/0.jpg' width='300'/><br/><br/>";
+               // }
+            }
+        } else {
+            //echo "No hay datos que mostrar!";
+        }
+           // echo "<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015' class='product-image'>";
+            
+        ?>
+
+               
+<?php
+                       
+?>
+                 
 
 
     <?php

@@ -14,8 +14,31 @@
 		     exit;
 		 }
 
-		 echo "hola mundo";
+		 $sql = "SELECT * FROM anunci";
 
+		 
+		 $productos = mysqli_query($conexion, $sql);
+
+
+		//  if(mysqli_num_rows($productos)>0){
+		// 	echo "Número de productos: " . mysqli_num_rows($productos) . "<br/><br/>";
+		// 	while($producto = mysqli_fetch_array($productos)){
+		// 		echo "Id: " . $producto['anu_titol'] . "<br/>";
+		// 		echo "Nombre: " . $producto['pro_nombre'] . "<br/>";
+		// 		echo "Precio: " . $producto['pro_precio'] . "<br/>";
+		// 		$foto='img/'.$producto['pro_foto'];
+
+		// 		if (file_exists ($foto)){
+		// 			echo "<img src='" . $foto . "' width='300'/><br/><br/>";
+		// 		} else {
+		// 			echo "<img src='img/0.jpg' width='300'/><br/><br/>";
+		// 		}
+		// 	}
+		// } else {
+		// 	echo "No hay datos que mostrar!";
+		// }
+
+		// mysqli_close($conexion);
 
 
 ?>
