@@ -21,6 +21,7 @@
 		 	 	$cont=0;
 
 		 	if(isset($_REQUEST['provincia'])){
+		 		echo"hola";
 		 		$robo=$_REQUEST['provincia'];
 		 		if($cont==0){
 		 			$consulta.="WHERE anu_ubicacio_robatori = \"".$robo."\"";
@@ -37,7 +38,7 @@
 		 		$cont++;
 		 	}
 
-		 	if(isset($_REQUEST['modelo'])){
+		 	if(!empty($_REQUEST['modelo'])){
 		 		$modelo=$_REQUEST['modelo'];
 		 		if($cont!=0){
 		 			 $consulta.=" and anu_model = \"".$modelo."\"";
@@ -47,7 +48,7 @@
 		 		$cont++;
 		 	}
 
-		 	if(isset($_REQUEST['numeroserie'])){
+		 	if(!empty($_REQUEST['numeroserie'])){
 		 		$serie=$_REQUEST['numeroserie'];
 		 		if($cont!=0){
 		 			$consulta.=" and anu_numero_serie = \"".$serie."\"";
@@ -58,7 +59,7 @@
 		 	};
 
 		 	
-		 	if(isset($_REQUEST['fecharobo'])){
+		 	if(!empty($_REQUEST['fecharobo'])){
 		 		$datarobo=$_REQUEST['fecharobo'];
 		 		if($cont!=0){
 		 			$consulta.=" and anu_data_robatori = \"".$datarobo."\"";

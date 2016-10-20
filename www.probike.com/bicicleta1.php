@@ -116,23 +116,57 @@ include 'conexio_bd.php';
 
 <!-- VALIDACIÓN DE DATOS -->
 <script>
-        
-            function validar(){
+        function validarFechaMenorActual(date){
+                              
+                              var fecha = date.split("-");
+
+                              var d = new Date().toISOString().slice(0,10); 
+ 
+                            //alert(d);
+
+                                var fechaAct = d.split("-");
+
+
+                              //var today = new Date();
+                         
+                              if (fecha > fechaAct){
+                                error=false;
+                                document.formulario.fecharobo.style.borderColor='red';
+
+                              }else{
+
+                              }
+                                error= true;
+                            }
+
+
+
+            function validar(date){
                 var error=true;
+                var error1=true;
+                var error2=true;
+                var error3=true;
                 
-                if(document.formulario.modelo.value==""){
-                    document.formulario.modelo.style.borderColor='red';
-                    error=false;
-                }
-                if(document.formulario.numeroserie.value==""){
-                    document.formulario.numeroserie.style.borderColor='red';
-                    error=false;
-                }
+                // if(document.formulario.modelo.value==""){
+                //     document.formulario.modelo.style.borderColor='red';
+                //     error1=false;
+
+                // }
+                // if(document.formulario.numeroserie.value==""){
+                //     document.formulario.numeroserie.style.borderColor='red';
+                //     error2=false;
+                // }
                 
-                if(document.formulario.fecharobo.value==""){
-                    document.formulario.fecharobo.style.borderColor='red';
-                    error=false;
+                if(document.formulario.fecharobo.value!=""){
+                     
+                        //validarFechaMenorActual(date);
+
+                        error3 = validarFechaMenorActual(date);
+                        
                 }
+                if(error1==true && error2==true && error3==true){
+                    error=true;
+                }else{error=false}
                 
 
                 return error;
@@ -820,15 +854,12 @@ include 'conexio_bd.php';
             <label>Ordenar por</label>
             <select onchange="setLocation(this.value)">
                         <option value="bicicletas15ee.html?dir=asc&amp;order=position">
-                    Relevancia            </option>
-                        <option value="bicicletas79f7.html?dir=asc&amp;order=name">
-                    Nombre            </option>
-                        <option value="http://www.probike.com/bicicletas.html?dir=asc&amp;order=price" selected="selected">
-                    Precio            </option>
-                        <option value="bicicletasc689.html?dir=asc&amp;order=manufacturer">
-                    Marca            </option>
+                    Robadas            </option>
+                        <option value="select_encontradas.php">
+                    Encontradas            </option>
+                        
                     </select>
-                        <a href="bicicletasd3fb.html?dir=desc&amp;order=price" title="Establecer dirección descendente"><img src="skin/frontend/default/default/images/i_asc_arrow.gif" alt="Establecer dirección descendente" class="v-middle" /></a>
+                       
         </div>
     </div>
 
@@ -927,7 +958,7 @@ include 'conexio_bd.php';
                 <div class="col-left sidebar"><h2 class="title_filters" style="text-transform:uppercase">Búsqueda Avanzada</h2>
                     <div class="block block-layered-nav gomage-navigation-slider-type-cone gomage-navigation-icons-1F5070">
                         <div class="block-content">
-                            <form name=formulario method="GET" onsubmit="return validar();">
+                            <form name=formulario method="GET" onsubmit="return validar(fecharobo.value);">
                                 <div class="filtro">
                                     <div class="filtro"><span class="label">Lurgar del robo: </span></div>
                                     <div><select name="provincia" size="1">
@@ -1152,7 +1183,6 @@ include 'conexio_bd.php';
                                         <input type="radio" name="color" value="otro"/>Otro<br/>
                                     </div>
                                     <div>
-                                        <input name="oculto" type="hidden" value="formulario" />
                                         <input type="submit" value="Pasando variable oculta" />
                                     </div>
 
