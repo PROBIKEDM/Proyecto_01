@@ -847,15 +847,25 @@ include 'conexio_bd.php';
 
 
 
-
+<script type="text/javascript">
+    function enviar(dato) {
+        document.getElementById('favoritos').options[opcion].selected=true;
+   submit();
+   return false
+}
+</script>
 
     <div class="toolbar">
         <div class="sort-by">
             <label>Ordenar por</label>
-            <select onchange="setLocation(this.value)">
-                        <option value="bicicletas15ee.html?dir=asc&amp;order=position">
+            <select id="favoritos" onchange="setLocation(this.value)">
+                        <option selected disabled>
+                        <?php if($_REQUEST["Estado"]=="Robada"){echo "Robadas";}else{echo "Encontradas"; }  ?>
+                            
+                        </option>
+                        <option value="bicicleta1.php?Estado=Robada" onClick="enviar()">
                     Robadas            </option>
-                        <option value="select_encontradas.php">
+                        <option  value="bicicleta1.php?Estado=Encontrada" onClick="enviar()" >
                     Encontradas            </option>
                         
                     </select>
@@ -893,7 +903,7 @@ include 'conexio_bd.php';
    </h2>                                    
                     <div class="actions clearfix">
                         <div class="button_cart">
-                                <button type="button" title="contacto" class="button btn-cart" onclick="setLocation('bicicleta-infantil-conor-meteor-16-20154df8.html?options=cart')"><span><span>CONTACTO</span></span></button>
+                                <button type="button" title="contacto" class="button btn-cart" onclick="setLocation()"><span><span>CONTACTO</span></span></button>
                         </div>
                          
                     </div>
@@ -935,7 +945,7 @@ include 'conexio_bd.php';
                                         Marca            
                                 </option>
                         </select>
-                        <a href="bicicletasd3fb.html?dir=desc&amp;order=price" title="Establecer dirección descendente"><img src="skin/frontend/default/default/images/i_asc_arrow.gif" alt="Establecer dirección descendente" class="v-middle" /></a>
+                        
                 </div>
 
             </div>
@@ -959,9 +969,26 @@ include 'conexio_bd.php';
                     <div class="block block-layered-nav gomage-navigation-slider-type-cone gomage-navigation-icons-1F5070">
                         <div class="block-content">
                             <form name=formulario method="GET" onsubmit="return validar(fecharobo.value);">
-                                <div class="filtro">
-                                    <div class="filtro"><span class="label">Lurgar del robo: </span></div>
-                                    <div><select name="provincia" size="1">
+
+                             <dl id="narrow-by-list" style="width: 180px;">
+                                
+               
+                                <div >
+                                <div>
+                                        <dt><span class="label" style="margin-top: 10px;">Estado de la Bicicleta: </span></dt>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="Estado" value="Robada">Robadas<br>
+                                        <input type="radio" name="Estado" value="Encontrada" checked>Encontradas<br>
+                                    </div>
+                                    <div>
+                                        <dt><span class="label" style="margin-top: 10px;">Lugar del robo: </span></dt>
+                                    </div>
+                                    <div>
+                                        <dt><span class="label" style="margin-top: 10px;">Lugar del robo: </span></dt>
+                                    </div>
+
+                                    <div><select style="margin-left: 10px; width: 150px;" name="provincia" size="1">
                                             <option selected disabled>Selecciona</option>
                                             <option value='A Coruña' >A Coruña</option>
                                             <option value='álava'>Álava</option>
@@ -1018,9 +1045,9 @@ include 'conexio_bd.php';
                                             <option value='Zaragoza'>Zaragoza</option>
                                     </select>
                                     </div>
-                                    <div><span class="label">Marca: </span></div>
+                                    <div><dt><span class="label">Marca: </span></dt> </div>
                                     <div>
-                                        <select name="marca" id="rango">
+                                        <select style=" margin-left: 10px; width: 150px;" name="marca" id="rango">
                                             <option selected disabled>Seleciona</option>
                                             <option value="abus">Abus</option>
                                             <option value="aim_bike_parts">Aim Bike Parts</option>
@@ -1149,45 +1176,49 @@ include 'conexio_bd.php';
                                         </select>
                                     </div>
                                     <div>
-                                        <span class="label">Modelo: </span>
+                                        <dt><span class="label">Modelo: </span></dt>
                                     </div>
                                     <div>
-                                        <input type="text" name="modelo" id="modelo" size="20" maxlength="85" onfocus="document.formulario.modelo.style.borderColor='';"/>
+                                        <input style=" margin-left: 10px; type="text" name="modelo" id="modelo" size="20" maxlength="40" onfocus="document.formulario.modelo.style.borderColor='';"/>
                                     </div>
                                     <div>
-                                        <span class="label">Número de serie de la bici: </span>
+                                        <dt><span class="label">Número de serie: </span></dt>
                                     </div>
                                     <div>
-                                        <input type="text" name="numeroserie" id="numeroserie" size="30" maxlength="85" onfocus="document.formulario.numeroserie.style.borderColor='';"/>
+                                        <input style=" margin-left: 10px;"type="text" name="numeroserie" id="numeroserie" size="20" maxlength="40" onfocus="document.formulario.numeroserie.style.borderColor='';"/>
                                     </div>
                                     <div>
-                                        <span class="label">Fecha del robo: </span>
+                                        <dt><span class="label">Fecha del robo: </span></dt>
                                     </div>
                                     <div>
-                                        <input type="date" name="fecharobo" onfocus="document.formulario.fecharobo.style.borderColor='';"/>
+                                        <input type="date"  style="width: 145px; margin-left: 10px;" name="fecharobo" onfocus="document.formulario.fecharobo.style.borderColor='';"/>
                                     </div>
                                     <div>
-                                        <span class="label">Color bici: </span>
+                                        <dt><span class="label">Color bici: </span></dt>
                                     </div>
                                     <div>
-                                        <input type="radio" name="color" value="blanca"/>Blanca<br/>
-                                        <input type="radio" name="color" value="negra">Negra<br/>
-                                        <input type="radio" name="color" value="gris"/>Gris<br/>
-                                        <input type="radio" name="color" value="azul"/>Azúl<br/>
-                                        <input type="radio" name="color" value="naranja"/>Naranja<br/>
-                                        <input type="radio" name="color" value="amarilla"/>Amarilla<br/>
-                                        <input type="radio" name="color" value="roja"/>Roja<br/>
-                                        <input type="radio" name="color" value="verde"/>Verde<br/>
-                                        <input type="radio" name="color" value="marron"/>Marrón<br/>
-                                        <input type="radio" name="color" value="purpura"/>Púrpura<br/>
-                                        <input type="radio" name="color" value="otro"/>Otro<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="blanca"/>Blanca<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="negra">Negra<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="gris"/>Gris<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="azul"/>Azúl<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="naranja"/>Naranja<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="amarilla"/>Amarilla<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="roja"/>Roja<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="verde"/>Verde<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="marron"/>Marrón<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="purpura"/>Púrpura<br/>
+                                        <input style=" margin-left: 10px;" type="radio" name="color" value="otro"/>Otro<br/>
                                     </div>
+                                    <dt></dt>
+                                    <dt></dt>
                                     <div>
-                                        <input type="submit" value="Pasando variable oculta" />
+                                         <input type="submit" value="ENVIAR" />
                                     </div>
+
 
 
                                 </div>
+                                 </dl>
                             </form>
                         </div>
                     </div>
