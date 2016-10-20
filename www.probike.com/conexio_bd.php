@@ -74,14 +74,14 @@
 		 		if($cont!=0){
 		 			$consulta.=" and anu_color =\"".$color."\"";
 		 		}else{
-		 			$consulta.="WHERE anu_color \"".$color."\"";
+		 			$consulta.="WHERE anu_color =\"".$color."\"";
 		 		}
 		 		$cont++;
 		 	}
 
 		 	
 
-		 	 echo $sql = "SELECT * FROM anunci $consulta";
+		 	$sql = "SELECT * FROM anunci $consulta";
 		 	$productos = mysqli_query($conexion, $sql);
 
 
