@@ -278,76 +278,10 @@ include 'conexio_bd.php';
                         <ul id="nav">
     	                   <li class="level0 nav-1 active level-top first parent">
                                 <a class="level-top">
-                                    <span>Bicicletas Robadas</span>
+                                    <span>Bicicletas Robadas</span>                            
+
                                 </a>
-                            <div class="capa_menu">
-                                <table class="table_capa_menu" width="100%" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td class="td_marcas">
-                                            <div class="capa_marcas">
-                                                <h2><span class="arrow"></span>Marcas destacadas</h2>
-                                                    <ul>
-                                                        <li>
-                                                            <a><img src='media/catalog/category/brompton_2.png' alt='BROMPTON' title='BROMPTON'/></a>
-                                                        </li>
-                                                        <li>
-                                                            <a><img src='media/catalog/category/cannondale_2.png' alt='CANNONDALE' title='CANNONDALE'/></a>
-                                                        </li>
-                                                        <li>
-                                                            <a><img src='media/catalog/category/orbea.png' alt='ORBEA' title='ORBEA'/></a>
-                                                        </li>
-                                                        <li>
-                                                            <a><img src='media/catalog/category/scott-logo.png' alt='SCOTT' title='SCOTT'/></a>
-                                                        </li>
-                                                        <li>
-                                                            <a><img src='media/catalog/category/specialized_4.png' alt='SPECIALIZED' title='SPECIALIZED'/></a>
-                                                        </li>
-                                                        <li>
-                                                            <a><img src='media/catalog/category/trek_2.png' alt='TREK' title='TREK'/></a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="capa_categorias"><h2><span class="arrow"></span>Categorías</h2>
-                                                    <ul class="level0"><li class="level1 nav-1-1 first">
-                                                        <a>
-                                                            <span>2ª Mano</span>
-                                                        </a>
-<li class="level1 nav-1-2">
-<a>
-<span>Carretera</span>
-</a>
-</li><li class="level1 nav-1-3">
-<a>
-<span>Cuadros</span>
-</a>
-</li><li class="level1 nav-1-4">
-<a>
-<span>Eléctrica</span>
-</a>
-</li><li class="level1 nav-1-5">
-<a>
-<span>Free/DH</span>
-</a>
-</li><li class="level1 nav-1-6">
-<a>
-<span>Infantil</span>
-</a>
-</li><li class="level1 nav-1-7">
-<a>
-<span>MTB</span>
-</a>
-</li><li class="level1 nav-1-8">
-<a>
-<span>Triatlón</span>
-</a>
-</li><li class="level1 nav-1-9 last">
-<a>
-<span>Urbana</span>
-</a>
-</li></ul>
-</div></td></tr></table></div>
+                            
 </li><li class="level0 nav-2 level-top parent">
 <a class="level-top">
 <span>Ropa</span>
@@ -438,7 +372,7 @@ include 'conexio_bd.php';
 </li></ul>
 </div></td></tr></table></div>
 </li><li class="level0 nav-3 level-top parent">
-<a href="calzado.html" class="level-top">
+<a class="level-top">
 <span>Calzado</span>
 </a>
 <div class="capa_menu"><table class="table_capa_menu" width="100%" cellpadding="0" cellspacing="0"><tr><td class="td_marcas"><div class="capa_marcas"><h2><span class="arrow"></span>Marcas destacadas</h2><ul><li><a ><img src='media/catalog/category/bontrager_1.png' alt='BONTRAGER' title='BONTRAGER'/></a></li><li><a><img src='media/catalog/category/shimano_2.png' alt='SHIMANO' title='SHIMANO'/></a></li><li><a><img src='media/catalog/category/specialized_4.png' alt='SPECIALIZED' title='SPECIALIZED'/></a></li></ul></div></td>
