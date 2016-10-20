@@ -849,7 +849,7 @@ include 'conexio_bd.php';
 
                 echo "<li class='item'>"; 
 
-                echo "<img src='IMG/".$producto["anu_foto"].".jpg'/>";
+                echo "<img src='IMG/".$producto["anu_foto"].".jpg' width='175' height='120'/>";
  ?>                
                  
                 <div class="dades_product">
