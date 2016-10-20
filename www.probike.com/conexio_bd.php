@@ -15,7 +15,7 @@
 		 }
 		 
 
-		 if(isset($_REQUEST["oculto"])){
+		 
 
 		 		$consulta="";
 		 	 	$cont=0;
@@ -83,12 +83,6 @@
 
 		 	 echo $sql = "SELECT * FROM anunci $consulta";
 		 	$productos = mysqli_query($conexion, $sql);
-		 	
-		 }else{
-
-		 		$sql = "SELECT * FROM anunci";
-		 		$productos = mysqli_query($conexion, $sql);
-		}
 
 
 
