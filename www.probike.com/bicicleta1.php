@@ -171,6 +171,12 @@ include 'conexio_bd.php';
 
                 return error;
             }
+
+            function sentencia(valor,id,idgrup) { 
+                        open('anuncio.php?&variable='+valor+'&id='+id+'&idgrup='+idgrup,'','top=200,left=300,width=700,height=600, Scrollbars=YES'); 
+            };
+
+
     </script>
 
 
@@ -888,22 +894,22 @@ include 'conexio_bd.php';
             
             while($producto = mysqli_fetch_array($productos)){
 
-                echo "<li class='item'>"; 
+                echo "<li class='item' >"; 
 
                 echo "<img src='IMG/".$producto["anu_foto"].".jpg' width='175' height='120'/>";
  ?>                
                  
                 <div class="dades_product">
-                    <h2 class="product-name">       
+                    <h2 style='height: 34px' class="product-name">       
  <?php    
 
-                echo"<a href='bicicleta-infantil-conor-meteor-16-2015.html' title='Bicicleta Infantil Conor Meteor 16&quot; 2015'>".$producto['anu_titol']."</a>";
+                echo"<a>".$producto['anu_titol']."</a>";
 
   ?>           
    </h2>                                    
-                    <div class="actions clearfix">
+                    <div  class="actions clearfix">
                         <div class="button_cart">
-                                <button type="button" title="contacto" class="button btn-cart" onclick="setLocation()"><span><span>CONTACTO</span></span></button>
+                                <button type="button" title="contacto" class="button btn-cart" onclick="sentencia()"><span><span>CONTACTO</span></span></button>
                         </div>
                          
                     </div>
@@ -980,9 +986,6 @@ include 'conexio_bd.php';
                                     <div>
                                         <input type="radio" name="Estado" value="Robada">Robadas<br>
                                         <input type="radio" name="Estado" value="Encontrada" checked>Encontradas<br>
-                                    </div>
-                                    <div>
-                                        <dt><span class="label" style="margin-top: 10px;">Lugar del robo: </span></dt>
                                     </div>
                                     <div>
                                         <dt><span class="label" style="margin-top: 10px;">Lugar del robo: </span></dt>
