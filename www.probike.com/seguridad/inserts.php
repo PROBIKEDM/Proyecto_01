@@ -114,70 +114,7 @@ include 'conexio_bd.php';
 			}
 </style>
 
-<!-- VALIDACIÓN DE DATOS -->
-<script>
-        function validarFechaMenorActual(date){
-                              
-                              var fecha = date.split("-");
 
-                              var d = new Date().toISOString().slice(0,10); 
- 
-                            //alert(d);
-
-                                var fechaAct = d.split("-");
-
-
-                              //var today = new Date();
-                         
-                              if (fecha > fechaAct){
-                                error=false;
-                                document.formulario.fecharobo.style.borderColor='red';
-
-                              }else{
-
-                              }
-                                error= true;
-                            }
-
-
-
-            function validar(date){
-                var error=true;
-                var error1=true;
-                var error2=true;
-                var error3=true;
-                
-                // if(document.formulario.modelo.value==""){
-                //     document.formulario.modelo.style.borderColor='red';
-                //     error1=false;
-
-                // }
-                // if(document.formulario.numeroserie.value==""){
-                //     document.formulario.numeroserie.style.borderColor='red';
-                //     error2=false;
-                // }
-                
-                if(document.formulario.fecharobo.value!=""){
-                     
-                        //validarFechaMenorActual(date);
-
-                        error3 = validarFechaMenorActual(date);
-                        
-                }
-                if(error1==true && error2==true && error3==true){
-                    error=true;
-                }else{error=false}
-                
-
-                return error;
-            }
-
-            function sentencia(id) { 
-                        open('anuncio.php?id='+id,'','top=200,left=300,width=700,height=620, Scrollbars=YES'); 
-            };
-
-
-    </script>
 
 
 </head>
@@ -316,23 +253,13 @@ include 'conexio_bd.php';
                 <div class="nav-container">
                     <div class="telf">934 197 889</div>
                         <ul id="nav">
-    	                  <li class="level0 nav-9 active level-top last">
-<a href="#" class="level-top">
-<span>BICICLETAS ROBADAS</span>
-</a>
-<div class="capa_menu"><table class="table_capa_menu" width="100%" cellpadding="0" cellspacing="0"><tr><td class="td_marcas"></td>
-<td><div class="capa_categorias"><h2><span class="arrow"></span>Categorías</h2>
-<ul class="level0"><li class="level1 nav-2-1 first">
-<a href="bicicleta1.php?Estado=Robada">
-<span>Buscar una bici</span>
-</a>
-</li><li class="level1 nav-2-2">
-<a href="inserts.php">
-<span>Poner un anuncio</span>
-</a>
-</li></ul>
-</div></td></tr></table></div>
-</li> <li class="level0 nav-2 level-top parent">
+    	                   <li class="level0 nav-1 active level-top first parent">
+                                <a class="level-top">
+                                    <span>Bicicletas Robadas</span>                            
+
+                                </a>
+                            
+</li><li class="level0 nav-2 level-top parent">
 <a class="level-top">
 <span>Ropa</span>
 </a>
@@ -863,31 +790,7 @@ include 'conexio_bd.php';
 
 
 
-<script type="text/javascript">
-    function enviar(dato) {
-        document.getElementById('favoritos').options[opcion].selected=true;
-   submit();
-   return false
-}
-</script>
 
-    <div class="toolbar">
-        <div class="sort-by">
-            <label>Ordenar por</label>
-            <select id="favoritos" onchange="setLocation(this.value)">
-                        <option selected disabled>
-                        <?php if($_REQUEST["Estado"]=="Robada"){echo "Robadas";}else{echo "Encontradas"; }  ?>
-                            
-                        </option>
-                        <option value="bicicleta1.php?Estado=Robada" onClick="enviar()">
-                    Robadas            </option>
-                        <option  value="bicicleta1.php?Estado=Encontrada" onClick="enviar()" >
-                    Encontradas            </option>
-                        
-                    </select>
-                       
-        </div>
-    </div>
 
 
     <div class="category-products">
@@ -919,7 +822,7 @@ include 'conexio_bd.php';
    </h2>                                    
                     <div  class="actions clearfix">
                         <div class="button_cart">
-                                <button type="button" title="contacto" class="button btn-cart" onclick="sentencia('<?php echo $producto['anu_id']?>')"><span><span>CONTACTO</span></span></button>
+                                <button type="button" title="contacto" class="button btn-cart" onclick="sentencia()"><span><span>CONTACTO</span></span></button>
                         </div>
                          
                     </div>

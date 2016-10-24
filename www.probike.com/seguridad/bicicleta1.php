@@ -172,8 +172,8 @@ include 'conexio_bd.php';
                 return error;
             }
 
-            function sentencia(id) { 
-                        open('anuncio.php?id='+id,'','top=200,left=300,width=700,height=620, Scrollbars=YES'); 
+            function sentencia(valor,id,idgrup) { 
+                        open('anuncio.php?&variable='+valor+'&id='+id+'&idgrup='+idgrup,'','top=200,left=300,width=700,height=600, Scrollbars=YES'); 
             };
 
 
@@ -316,23 +316,13 @@ include 'conexio_bd.php';
                 <div class="nav-container">
                     <div class="telf">934 197 889</div>
                         <ul id="nav">
-    	                  <li class="level0 nav-9 active level-top last">
-<a href="#" class="level-top">
-<span>BICICLETAS ROBADAS</span>
-</a>
-<div class="capa_menu"><table class="table_capa_menu" width="100%" cellpadding="0" cellspacing="0"><tr><td class="td_marcas"></td>
-<td><div class="capa_categorias"><h2><span class="arrow"></span>Categorías</h2>
-<ul class="level0"><li class="level1 nav-2-1 first">
-<a href="bicicleta1.php?Estado=Robada">
-<span>Buscar una bici</span>
-</a>
-</li><li class="level1 nav-2-2">
-<a href="inserts.php">
-<span>Poner un anuncio</span>
-</a>
-</li></ul>
-</div></td></tr></table></div>
-</li> <li class="level0 nav-2 level-top parent">
+    	                   <li class="level0 nav-1 active level-top first parent">
+                                <a class="level-top">
+                                    <span>Bicicletas Robadas</span>                            
+
+                                </a>
+                            
+</li><li class="level0 nav-2 level-top parent">
 <a class="level-top">
 <span>Ropa</span>
 </a>
@@ -919,7 +909,7 @@ include 'conexio_bd.php';
    </h2>                                    
                     <div  class="actions clearfix">
                         <div class="button_cart">
-                                <button type="button" title="contacto" class="button btn-cart" onclick="sentencia('<?php echo $producto['anu_id']?>')"><span><span>CONTACTO</span></span></button>
+                                <button type="button" title="contacto" class="button btn-cart" onclick="sentencia()"><span><span>CONTACTO</span></span></button>
                         </div>
                          
                     </div>

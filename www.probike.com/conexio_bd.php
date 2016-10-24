@@ -15,8 +15,7 @@
 		 }
 		 
 
-		 
-
+		 		$cont=0;
 		 		$consulta="";
 
 		 	if(isset($_REQUEST['Estado'])){

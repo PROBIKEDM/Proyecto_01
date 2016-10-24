@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2016 a las 18:08:22
+-- Tiempo de generación: 21-10-2016 a las 19:45:02
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -80,7 +80,9 @@ INSERT INTO `anunci` (`anu_id`, `anu_estado`, `anu_titol`, `anu_data_anunci`, `a
 (30, '', 'bicicleta-urbana-trek-7-2', '2016-10-19 00:00:00', '2016-10-19', 'Barcelona', 'Barcelona', 'robada en el parking', 'Trek', 'urbana7', 'negra', NULL, 'bicicleta-urbana-trek-7-2', NULL, 'IMG30', NULL),
 (31, '', 'bicicleta-urbana-trek-ds-3', '2016-10-19 00:00:00', '2016-10-19', 'Barcelona', 'Barcelona', 'me la robaron', 'Trek', 'Ds3', '', NULL, 'bicicleta-urbana-trek-ds-3', NULL, 'IMG31', NULL),
 (32, '', 'brompton-h3l-blanca', '2016-10-19 00:00:00', '2016-10-19', 'barcelona', 'Barcelona', 'me la robaron ', 'brompton', 'h3l', 'blanca', NULL, 'brompton-h3l-blanca', NULL, 'IMG32', NULL),
-(33, '', 'brompton-m3l', '2016-10-19 00:00:00', '2016-10-19', 'barcelona', 'Barcelona', 'me la robaron a escondidas', 'brompton', 'm3l', '', NULL, 'brompton-m3l', NULL, 'IMG33', NULL);
+(33, '', 'brompton-m3l', '2016-10-19 00:00:00', '2016-10-19', 'barcelona', 'Barcelona', 'me la robaron a escondidas', 'brompton', 'm3l', '', NULL, 'brompton-m3l', NULL, 'IMG33', NULL),
+(34, 'Robada', 'Bici robada prueba', '2016-10-21 00:00:00', '2016-10-21', 'Madrid', 'Madrid', 'Me han robado la bici de prueba', 'Trek', '', 'Roja', '2015', 'Me han robado la bici de prueba', NULL, '', '99.99'),
+(42, 'buff', 'pene', '0000-00-00 00:00:00', '2016-10-21', '', 'Burgos', 'ñpenepene', 'buff', 'nolose', 'otro', '1999', '', 'anu_numero_seri', 'anu_foto', '0.00');
 
 --
 -- Índices para tablas volcadas
@@ -100,7 +102,7 @@ ALTER TABLE `anunci`
 -- AUTO_INCREMENT de la tabla `anunci`
 --
 ALTER TABLE `anunci`
-  MODIFY `anu_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `anu_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
